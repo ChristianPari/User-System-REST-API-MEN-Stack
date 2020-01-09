@@ -26,3 +26,14 @@ git add -A vs. git add .
 
 git status //on branch master
 git branch  //* master
+git commit //create a inital commit on the master branch
+
+code app.js //our route handling and use of express will be done within our app.js file
+
+add script 'start' : 'nodemon app.js' //this will be a command that we can input into the command line to start the server 
+
+add code to app.js file;
+    1. define the express variable as a const
+    2. create an instance of express called 'app'
+    3. add a port to listen to "app.listen('portnum');"
+    4. add an express method such as app.get() which will require a path and a request and response parameter in a call back function
