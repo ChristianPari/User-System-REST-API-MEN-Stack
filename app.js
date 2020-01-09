@@ -2,6 +2,8 @@ const express = require('express'),
       app = express(),
       mongoose = require('mongoose');
 
+      require('dotenv/config');
+
 //Middle Ware
 
 app.use('/post', (req, res) => {
@@ -21,7 +23,7 @@ app.get('/post', (req, res) => {
 
 //Connect to Data-Base
 
-mongoose.connect('mongodb+srv://user314:31415>@cluster0-ichxa.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true }, () => {
+mongoose.connect(process.env.DB_HOMECONNECT, { useNewUrlParser: true }, () => {
     console.log('connected to the database');
     
 })
