@@ -37,3 +37,10 @@ add code to app.js file;
     2. create an instance of express called 'app'
     3. add a port to listen to "app.listen('portnum');"
     4. add an express method such as app.get() which will require a path and a request and response parameter in a call back function
+    5. add a use method if you want to use a callback function when a given route is used
+
+nmp install dotenv mongoose
+
+    mongoose uses mongodb which is a cloud server data base hosting service. it is simple and eay for me to use when first learning to create my own server
+
+    .env files are used in servers so that there is information the public user can not reach/have easy access to. this is where i will be storing things like usernames and passwords for my server database
