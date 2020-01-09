@@ -1,16 +1,19 @@
 {
-  "name": "devedrest",
+  "name": "restapi",
   "version": "1.0.0",
-  "description": "tutorial title: Build A Restful Api With Node.js Express & MongoDB\r tutorial link: https://youtu.be/vjf774RKrLc",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./app.js"
+    "start": "nodemon app.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.8.6",
     "nodemon": "^2.0.2"
   }
 }
