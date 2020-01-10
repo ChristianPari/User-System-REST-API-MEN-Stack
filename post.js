@@ -14,6 +14,15 @@ router.get('/', (req, res) => {
     res.send('now on post');
 })
 
+router.post('/', (req, res) => {
+
+    // const post = new Post({
+    //     title: req.body.title
+    // });
+
+    console.log(req.body);
+})
+
 router.get('/user001', (req, res) => {
     res.send("User 1's post");
 })

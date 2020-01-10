@@ -4,28 +4,24 @@ const express = require('express'),
 
       require('dotenv/config');
 
-//Middle Ware
 
-app.use('/post', (req, res) => {
-    console.log('the post route was used');
-    
-})
+//Import Routes
 
 
-//Routes
-app.get('/', (req,res) => {
-    res.send('hello user');
-})
+//post route
+const postRoute = require('./routes/post');
+app.use('/post', postRoute);
 
-app.get('/post', (req, res) => {
-    res.send('you are on the post page');
-})
+//homepage route
+const homeRoute = require('./routes/home');
+app.use('/', homeRoute);
+
 
 //Connect to Data-Base
 
-mongoose.connect(process.env.DB_HOMECONNECT, { useNewUrlParser: true }, () => {
-    console.log('connected to the database');
+mongoose.connect(process.env.DB_HOMECONNECT, { useNewUrlParser: true}, () => {
+    console.log('\nDataBase Connected:\n');
     
-})
+}, { useUnifiedTopology: true })
 
 app.listen(4000);

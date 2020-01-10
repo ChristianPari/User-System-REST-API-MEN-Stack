@@ -30,9 +30,9 @@ git commit //create a inital commit on the master branch
 
 code app.js //our route handling and use of express will be done within our app.js file
 
-add script 'start' : 'nodemon app.js' //this will be a command that we can input into the command line to start the server 
+ // add script to 'package.json' --->  'start' : 'nodemon app.js' //this will be a command that we can input into the command line to start the server 
 
-add code to app.js file;
+ // add code to app.js file;
     1. define the express variable as a const
     2. create an instance of express called 'app'
     3. add a port to listen to "app.listen('portnum');"
@@ -46,7 +46,25 @@ nmp install dotenv mongoose
     .env files are used in servers so that there is information the public user can not reach/have easy access to. this is where i will be storing things like usernames and passwords for my server database
 
 
-add code to app.js;
+ // add code to app.js;
 
     1.mongoose.connect('mongodb+srv:"  PERSONAL LINK " ');
     2. NEXT add a callback function to determin what should happen when the database connects ex. 'log "data base connected" '
+
+mkdir routes //making a folder that will contain all files that each handle a specific route
+
+code post.js //this will have all the code to handle when a user is on the post route and upload a post to the data base
+
+code home.js //this will give intructions to the server on how to display and setup the homepage
+
+//for both /route files you will need to create an instance of express and an instance of express.Router() saved as the variable router
+//this router variable must be exported and then the require method must be used in app.js
+
+//to make it possible for users to create post you must use mongoose 'schemas'. 
+
+mkdir models //then inside this directory
+code Post.js //this file will contain how a regular post will look and what parts it will have 'title, description, ect.'
+
+//once the schema is created you can add a POST method inside of /routes/post.js
+
+
