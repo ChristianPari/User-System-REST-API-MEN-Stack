@@ -16,11 +16,34 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 
-    // const post = new Post({
-    //     title: req.body.title
-    // });
+    const post = new Post({
+        title: req.body.title,
+        description: req.body.description
+    });
 
-    console.log(req.body);
+    // console.log(post);
+    // try {
+
+    //     post.save()
+    //     console.log(post);
+    //     res.json(post);
+
+    // } catch(err) {
+    //     console.log('an error has occured while posting');
+    //     res.json({message: 'an error has occured'})
+        
+    // }
+
+    post.save()
+    .then(data => {
+        console.log(data);
+        res.json(data);
+    })
+    .catch(err => {
+        res.json({message: err})
+    })
+
+    // console.log(req.body);
 })
 
 router.get('/user001', (req, res) => {
