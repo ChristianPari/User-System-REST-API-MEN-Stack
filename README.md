@@ -44,3 +44,9 @@ nmp install dotenv mongoose
     mongoose uses mongodb which is a cloud server data base hosting service. it is simple and eay for me to use when first learning to create my own server
 
     .env files are used in servers so that there is information the public user can not reach/have easy access to. this is where i will be storing things like usernames and passwords for my server database
+
+
+add code to app.js;
+
+    1.mongoose.connect('mongodb+srv:"  PERSONAL LINK " ');
+    2. NEXT add a callback function to determin what should happen when the database connects ex. 'log "data base connected" '
