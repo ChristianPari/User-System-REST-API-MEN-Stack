@@ -1,5 +1,6 @@
-tutorial title: Build A Restful Api With Node.js Express & MongoDB
-tutorial link: https://youtu.be/vjf774RKrLc
+# User System MERN Stack
+
+### This repo is a learning tool for thoes learning react and need a user system boilerplate
 
 Nmp - Node Package Manager
 
@@ -7,9 +8,14 @@ Nmp - Node Package Manager
 
     b. it is also a command line utility used to download and install packages (from the web of node devs). any developer can upload packages they've created
 
+    c. code from other devs can be utilized in any NPM project for free and comes in the form of 'packages'
+
+    d. when you install any package it is added to your project dependency list.
+
+    e. when the command npm i (install) is used, all of the projects dependecies (as well as their dependecies, this is recersive is some sense) will be installed and stored in a node_modules folder.
 
 
-Commands in order;
+Commands to start a new NPM project in order;
 
 nmp init
         //creates a package.json 
@@ -39,12 +45,21 @@ code app.js //our route handling and use of express will be done within our app.
     4. add an express method such as app.get() which will require a path and a request and response parameter in a call back function
     5. add a use method if you want to use a callback function when a given route is used
 
-nmp install dotenv mongoose
+npm i express mongoose nodemon dotenv bcrypt jsonwebtoken morgan 
+
+    express is essential to this project and is the foundation of this API, it handles incoming request and is the base for how responses to the client are made.
 
     mongoose uses mongodb which is a cloud server data base hosting service. it is simple and eay for me to use when first learning to create my own server
 
+    nodemon is helpful in development and only need to be a dev dependency since its only purpose is to auto restart the server when changes are made in the working directory
+
     .env files are used in servers so that there is information the public user can not reach/have easy access to. this is where i will be storing things like usernames and passwords for my server database
 
+    bcrypt will be used for password hashing
+
+    jsonwebtoken is used to create JWTs on the backend that will then be store by the client and safely hold personal data, like their user database document _id
+
+    morgan is optional but I find it helpful as it will log all request coming into the server and can be helpful for debuging and knowing that the server is properly recieving incoming request
 
  // add code to app.js;
 
@@ -53,18 +68,20 @@ nmp install dotenv mongoose
 
 mkdir routes //making a folder that will contain all files that each handle a specific route
 
-code post.js //this will have all the code to handle when a user is on the post route and upload a post to the data base
+code user.js //this will have all the code to handle all user related route requests
 
 code home.js //this will give intructions to the server on how to display and setup the homepage
 
 //for both /route files you will need to create an instance of express and an instance of express.Router() saved as the variable router
 //this router variable must be exported and then the require method must be used in app.js
 
-//to make it possible for users to create post you must use mongoose 'schemas'. 
+//to make it possible for users to create an account, a schema must be set up to determine how a users data will be stored in the database
 
 mkdir models //then inside this directory
-code Post.js //this file will contain how a regular post will look and what parts it will have 'title, description, ect.'
 
-//once the schema is created you can add a POST method inside of /routes/post.js
+code User.js //this file will contain how a users data will be structured in MongoDB, schema just means the structure of data in a particular context
+
+Once the schema is created you can add a POST method route handler inside of /routes/user.js this will handle user registration
+For user registration you will need to have backend validation and password encryption for safe DB storage. I will be creating my own backend validation and using bcrypt for password hashing/encryption
 
 
