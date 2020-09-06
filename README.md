@@ -1,6 +1,20 @@
 # User System MERN Stack
 
-### This repo is a learning tool for thoes learning react and need a user system boilerplate
+## How to start working with this template
+    1) click on the 'Use this template' button on the 'backend-template' branch
+    2) name your new repo and create repo, you now have a copy!
+    3) clone your repo into a directory of your choice  
+        use the git clone 'github.com/yourUserName/yourRepoName.git
+    4) go into the directory of your cloned repo and run the command
+        npm i/install
+    5) create a .env file and enter in the following keys
+        PORT='any port number that isnt taken'
+        MONGO='Your mongoDB URI'
+### Your backend is complete. Now you are ready to get started working with React!
+
+#### This repo is a learning tool for thoes learning react and need a user system boilerplate
+<p>&nbsp<p><p>&nbsp<p><p>&nbsp<p><p>&nbsp<p><p>&nbsp<p><p>&nbsp<p>
+
 
 Nmp - Node Package Manager
 
